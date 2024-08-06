@@ -1,13 +1,19 @@
 
 name: 'Setup'
 description: 'Composite action to set up'
+inputs:
+  working_directory:
+    description: 'The dependency manager to use (pip or poetry).'
+    required: true
+    type: string
+    default: 'scripts'
 
-
+    
 runs:
   using: 'composite'
   steps:
     - name: Setup test
       shell: bash
       run: |
-        echo "Hello world for setup from action "
+        echo "Hello world for setup from action ${{ inputs.working_directory }} "
    
