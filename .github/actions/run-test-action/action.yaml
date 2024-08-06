@@ -12,6 +12,9 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Git clone the repository
+      uses: actions/checkout@v4
+      
     - name: Setup test
       shell: bash
       run: |
