@@ -21,13 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
-      - name: Git clone the repository
-        uses: actions/checkout@v4
-
-      - name: Run a multi-line script first step
-        run: |
-          ls -l -a
       # Runs a single command using the runners shell
       - name: Run a one-line script
         uses: ./.github/actions/run-test-action
