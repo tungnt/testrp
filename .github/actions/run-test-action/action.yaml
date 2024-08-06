@@ -2,11 +2,7 @@
 name: 'Setup'
 description: 'Composite action to set up'
 inputs:
-  jfrog_url:
-    description: 'Jfrog '
-    required: false
-    default: 'test.com'
-    type: string
+
 
   jfrog_repo_name:
     description: 'Name of the JFrog repository to resolve dependencies from.'
@@ -16,18 +12,15 @@ inputs:
 
   working_directory:
     description: 'The dependency manager to use (pip or poetry).'
-    required: true
+    required: false
     type: string
-    default: 'scripts'
+    default: '.'
 
 runs:
   using: 'composite'
   steps:
-
-
-
-
     - name: Setup test
+      shell: bash
       run: |
         echo "Hello world for setup from action ${{jfrog_repo_name}}"
       working-directory: ${{working_directory}}      
